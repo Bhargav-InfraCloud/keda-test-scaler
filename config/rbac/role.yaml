@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - scaler.test.keda.sh
+  resources:
+  - testscalers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - scaler.test.keda.sh
+  resources:
+  - testscalers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - scaler.test.keda.sh
+  resources:
+  - testscalers/status
+  verbs:
+  - get
+  - patch
+  - update

@@ -1,0 +1,12 @@
+apiVersion: scaler.test.keda.sh/v1alpha1
+kind: TestScaler
+metadata:
+  labels:
+    app.kubernetes.io/name: testscaler
+    app.kubernetes.io/instance: testscaler-sample
+    app.kubernetes.io/part-of: keda-test-scaler
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: keda-test-scaler
+  name: testscaler-sample
+spec:
+  replicas: 3
